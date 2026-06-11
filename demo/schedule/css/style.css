@@ -1,0 +1,171 @@
+:root {
+  --col_primary: #007595;
+  --col_primary-pale: #609cb2;
+  --col_primary-palest: #d9e9ef;
+  --col_white: #fff;
+  --font_base: 16px;
+  --font_small: 12px;
+  --rounded: 8px;
+  --inset_offset: 8px;
+}
+
+body {
+  margin: 0;
+  background: white;
+  color: #222;
+  font-family: sans-serif;
+}
+
+main {
+  container-type: inline-size; /* @container の判定基準に指定 */
+  box-sizing: border-box;
+  max-width: 1200px;
+  margin-top: 40px;
+  margin-inline: auto;
+  padding: 40px 20px;
+  width: 100%;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: max-content repeat(7, 1fr);
+  grid-template-rows: 48px repeat(29, 32px);
+  overflow: clip;
+}
+
+/* 曜日 */
+.calendar-header {
+  background: var(--col_primary);
+  border-radius: var(--rounded) var(--rounded) 0 0;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-template-rows: subgrid;
+  grid-column: 1 / -1;
+  position: sticky;
+  top: 0;
+
+  .day {
+    color: var(--col_white);
+    font-size: var(--font_base);
+    font-weight: 700;
+    display: grid;
+    place-items: center;
+  }
+}
+
+/* 時間ラベル */
+.calendar-time {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-template-rows: subgrid;
+  grid-column: 1 / 2;
+  grid-row: 3 / -1;
+
+  .time {
+    display: grid;
+    color: var(--col_primary);
+    font-size: var(--font_small);
+    font-weight: 700;
+    grid-column: 1 / 2;
+    grid-row: span 2;
+    padding-right: 4px;
+    text-align: right;
+    align-self: start;
+  }
+}
+
+/* 予定 */
+.calendar-body {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-template-rows: subgrid;
+  grid-column: 2 / -1;
+  grid-row: 3 / -1;
+
+  /*  Gap Decorations  */
+  column-rule: 1px solid var(--col_primary);
+  row-rule-width: 1px;
+  row-rule-style: dashed, solid;
+  row-rule-color: var(--col_primary-pale);
+  row-rule-break: intersection;
+  row-rule-inset: var(--inset_offset);
+
+  .schedule {
+    background: var(--col_primary-palest);
+    border: 1px solid var(--col_primary-pale);
+    border-left: 3px solid var(--col_primary);
+    border-radius: var(--rounded);
+    color: var(--col_primary);
+    font-size: var(--font_small);
+    font-weight: 700;
+    margin-inline: var(--inset_offset) calc(var(--inset_offset) * 1.25);
+    padding: 4px;
+    overflow: hidden;
+
+    /* 位置の指定 */
+    grid-column: attr(data-day type(<number>), 1) /
+      calc(attr(data-day type(<number>), 1) + 1);
+    grid-row: attr(data-start type(<number>), 1) /
+      calc(
+        attr(data-start type(<number>), 1) + attr(data-length type(<number>), 1)
+      );
+  }
+}
+
+/* 横向きカレンダー */
+@container (max-width: 840px) {
+  .calendar {
+    display: grid;
+    border-radius: 8px 0 0 8px;
+    grid-template-columns: 40px repeat(28, 60px);
+    grid-template-rows: max-content repeat(7, 64px);
+  }
+
+  .calendar-wrapper {
+    display: grid;
+    overflow: auto;
+  }
+
+  .calendar-header {
+    border-radius: 8px 0 0 8px;
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+    position: sticky;
+    left: 0;
+  }
+
+  .calendar-time {
+    grid-column: 2 / -1;
+    grid-row: 1 / 2;
+
+    .time {
+      grid-column: span 2;
+      grid-row: revert;
+      padding-inline: var(--inset_offset) 0;
+      text-align: left;
+    }
+  }
+
+  .calendar-body {
+    grid-row: 2 / -1;
+
+    /*  Gap Decorations  */
+    column-rule-width: 1px;
+    column-rule-style: dashed, solid;
+    column-rule-color: var(--col_primary-pale);
+    column-rule-break: intersection;
+    column-rule-inset-junction: var(--inset_offset);
+    row-rule: 1px solid var(--col_primary-pale);
+    row-rule-break: normal;
+
+    .schedule {
+      margin-inline: calc(var(--inset_offset) * 0.5);
+      grid-row: attr(data-day type(<number>), 1);
+      grid-column: attr(data-start type(<number>), 1) /
+        calc(
+          attr(data-start type(<number>), 1) +
+            attr(data-length type(<number>), 1)
+        );
+    }
+  }
+}

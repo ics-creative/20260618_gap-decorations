@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>demo - schedule</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="calendar-wrapper">
+        <div class="calendar" id="calendar">
+          <!--   曜日   -->
+          <div class="calendar-header">
+            <div class="corner"></div>
+            <div class="day">月</div>
+            <div class="day">火</div>
+            <div class="day">水</div>
+            <div class="day">木</div>
+            <div class="day">金</div>
+            <div class="day">土</div>
+            <div class="day">日</div>
+          </div>
+
+          <!--  時間ラベル  -->
+          <div class="calendar-time">
+            <div class="time t-0700">7:00</div>
+            <div class="time t-0800">8:00</div>
+            <div class="time t-0900">9:00</div>
+            <div class="time t-1000">10:00</div>
+            <div class="time t-1100">11:00</div>
+            <div class="time t-1200">12:00</div>
+            <div class="time t-1300">13:00</div>
+            <div class="time t-1400">14:00</div>
+            <div class="time t-1500">15:00</div>
+            <div class="time t-1600">16:00</div>
+            <div class="time t-1700">17:00</div>
+            <div class="time t-1800">18:00</div>
+            <div class="time t-1900">19:00</div>
+            <div class="time t-2000">20:00</div>
+          </div>
+
+          <!--    予定    -->
+          <div class="calendar-body" id="calendarBody">
+            <div class="schedule" data-length="2" data-start="11" data-day="1">
+              昼休み
+            </div>
+            <div class="schedule" data-length="4" data-start="7" data-day="2">
+              MTG
+            </div>
+            <div class="schedule" data-length="2" data-start="6" data-day="3">
+              実装
+            </div>
+            <div class="schedule" data-length="3" data-start="3" data-day="1">
+              返信
+            </div>
+            <div class="schedule" data-length="2" data-start="14" data-day="2">
+              レビュー
+            </div>
+            <div class="schedule" data-length="2" data-start="19" data-day="3">
+              調整
+            </div>
+            <div class="schedule" data-length="4" data-start="10" data-day="4">
+              開発
+            </div>
+            <div class="schedule" data-length="2" data-start="20" data-day="4">
+              報告
+            </div>
+            <div class="schedule" data-length="2" data-start="18" data-day="5">
+              共有
+            </div>
+            <div class="schedule" data-length="3" data-start="8" data-day="6">
+              検証
+            </div>
+            <div class="schedule" data-length="2" data-start="20" data-day="7">
+              整理
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

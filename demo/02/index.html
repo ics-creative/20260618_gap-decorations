@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>demo - 02</title>
+    <style>
+      body {
+        margin: 0;
+        background: white;
+        font-family: sans-serif;
+      }
+
+      main {
+        max-width: 600px;
+        margin: 40px auto;
+        padding-inline: 16px;
+      }
+
+      .grid {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(5, 1fr);
+        column-rule:
+          3px solid blue,
+          4px double orange; /* 縦線 青/オレンジの線が連続する */
+        row-rule:
+          repeat(2, 2px solid green),
+          4px dotted red; /* 横線 緑/緑/赤の線が連続する */
+        column-rule-break: intersection; /* 縦線のみ交差点で分割 */
+        column-rule-inset-junction: 16px; /* 縦線の交点のみ16px短くする */
+        row-rule-inset-cap: 8px; /* 横線の端のみ4px短くする */
+
+        .grid-item {
+          background: #ddd;
+          aspect-ratio: 1 / 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="grid">
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+      </div>
+    </main>
+  </body>
+</html>

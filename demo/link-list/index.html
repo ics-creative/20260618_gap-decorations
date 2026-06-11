@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>demo - link-list</title>
+    <style>
+      /* reset */
+      body {
+        margin: 0;
+        background: white;
+        color: #222;
+        font-family: sans-serif;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      a {
+        color: currentColor;
+        text-decoration: none;
+      }
+
+      main {
+        max-width: 600px;
+        margin: 40px auto;
+        padding-inline: 16px;
+      }
+
+      .list {
+        box-sizing: border-box;
+        box-shadow: 0px 0px 15px -5px rgb(0, 0, 0, 0.35);
+        border-radius: 10px;
+        display: flex;
+        gap: 12px 32px;
+        flex-wrap: wrap;
+        column-rule: 1px solid rgb(0 0 0 / 0.45); /* 縦の罫線 */
+        padding: 16px 32px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <ul class="list">
+        <li class="list__item">
+          <a href="#">このサイトについて</a>
+        </li>
+        <li class="list__item">
+          <a href="#">ご意見・要望</a>
+        </li>
+        <li class="list__item">
+          <a href="#">プライバシーポリシー</a>
+        </li>
+        <li class="list__item">
+          <a href="#">アクセシビリティ</a>
+        </li>
+        <li class="list__item">
+          <a href="#">今後の方針</a>
+        </li>
+        <li class="list__item">
+          <a href="#">利用規約</a>
+        </li>
+        <li class="list__item">
+          <a href="#">サイトマップ</a>
+        </li>
+        <li class="list__item">
+          <a href="#">お知らせ</a>
+        </li>
+        <li class="list__item">
+          <a href="#">運営会社</a>
+        </li>
+        <li class="list__item">
+          <a href="#">お問い合わせ</a>
+        </li>
+        <li class="list__item">
+          <a href="#">ヘルプ</a>
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>

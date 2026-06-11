@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>demo - 02</title>
+    <style>
+      body {
+        margin: 0;
+        background: white;
+        font-family: sans-serif;
+      }
+
+      main {
+        max-width: 600px;
+        margin: 40px auto;
+        padding-inline: 16px;
+      }
+
+      .grid {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(5, 1fr);
+        column-rule: 4px solid orange;
+        row-rule: 4px solid green;
+        rule-overlap: column-over-row; /* 縦線を上に表示 */
+
+        .grid-item {
+          background: #ddd;
+          aspect-ratio: 1 / 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="grid">
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+      </div>
+    </main>
+  </body>
+</html>
