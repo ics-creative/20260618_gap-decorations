@@ -13,6 +13,7 @@ ICS MEDIA の記事「GridやFlexboxの余白に線を引く - CSS Gap Decoratio
 | [./demo/03/index.html](./demo/03/index.html)               | `rule-visibility-items` のデモ              | 基本的な使い方       |
 | [./demo/04/index.html](./demo/04/index.html)               | `rule-overlap` のデモ                       | 基本的な使い方       |
 | [./demo/link-list/index.html](./demo/link-list/index.html) | リンク集 作例                               | 作例                 |
+| [./demo/news/index.html](./demo/news/index.html)           | お知らせ 作例                               | 作例                 |
 | [./demo/schedule/index.html](./demo/schedule/index.html)   | スケジュール表 作例                         | 作例                 |
 
 ## ライセンス

@@ -1,0 +1,98 @@
+:root {
+  --font_medium: 14px;
+  --padding: 24px;
+}
+
+/* reset */
+body {
+  margin: 0;
+  background: white;
+  color: #222;
+  font-family: sans-serif;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  a {
+    color: currentColor;
+    text-decoration: none;
+  }
+}
+
+main {
+  max-width: 880px;
+  margin: 40px auto;
+  padding-inline: 16px;
+}
+
+.news__title {
+  margin: 0 0 16px;
+  font-size: 24px;
+}
+
+.news-list {
+  font-size: var(--font_medium);
+  display: grid;
+  grid-template-columns: max-content max-content 1fr 40px;
+  column-gap: 24px;
+  /* 行の罫線 */
+  row-rule: 1px solid rgb(0, 0, 0, 0.3);
+  row-rule-inset-end: 40px;
+
+  /* ホバー・フォーカス時に追従する背景要素 */
+  &:after {
+    content: "";
+    position: absolute;
+    inset: anchor(--anchor start);
+    inline-size: anchor-size(--anchor inline);
+    block-size: anchor-size(--anchor block);
+    border-radius: 4px;
+    background-color: rgb(0 0 0 / 0.05);
+    transition-property: inset, inline-size, block-size;
+    transition-duration: 0.3s;
+    z-index: -1;
+  }
+
+  .news-list__item {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 1 / -1;
+  }
+
+  .news-list__item--anchor {
+    padding: var(--padding);
+    display: grid;
+    align-items: center;
+    grid-template-columns: inherit;
+    grid-column: inherit;
+    /* 列の罫線 */
+    column-rule-width: repeat(2, 1px), 4px;
+    column-rule-style: repeat(2, dashed), double;
+    column-rule-color: rgb(0 0 0 / 0.3);
+    column-rule-inset: calc((var(--padding) - 8px) * -1);
+    transition: column-rule-inset 0.3s;
+
+    .category {
+      border: 1px solid rgb(0, 0, 0, 0.3);
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      padding-inline: 8px;
+    }
+
+    .arrow {
+      transition: translate 0.3s;
+    }
+
+    /* ホバー・フォーカス時のスタイル */
+    &:where(:hover, :focus-visible) {
+      anchor-name: --anchor;
+      column-rule-color: rgb(0 0 0 / 0.8);
+      column-rule-inset: 0;
+      .arrow {
+        translate: 3px 0;
+      }
+    }
+  }
+}
