@@ -1,12 +1,20 @@
 # 20260618_gap-decorations
 
-CSS の Gap Decorations を使ったデモ集です。
+ICS MEDIA の記事「GridやFlexboxの余白に線を引く - CSS Gap Decoration」で紹介しているデモのソースコードです。 ビルド不要の素の HTML / CSS で書かれています。
 
 本記事のデモは、**Chrome・Edge 149以上** でご覧ください。
 
-1. `rule`、`rule-break`、`rule-inset` を使用したデモ
-2. `rule`、`rule-break`、`rule-inset` を用いて、縦/横の罫線に別々のスタイルを当てるデモ
-3. `*-rule-visibility-items`、を使用したデモ
-4. `rule-overlap` を使用したデモ
-5. リンク集のデモ
-6. スケジュール表のデモ
+## デモ一覧
+
+| ページ                                                     | 内容                                        | 記事の対応セクション |
+| ---------------------------------------------------------- | ------------------------------------------- | -------------------- |
+| [./demo/01/index.html](./demo/01/index.html)               | `rule` / `rule-break` / `rule-inset` のデモ | 基本的な使い方       |
+| [./demo/02/index.html](./demo/02/index.html)               | 縦/横の罫線に個別のスタイルを適用するデモ   | 基本的な使い方       |
+| [./demo/03/index.html](./demo/03/index.html)               | `rule-visibility-items` のデモ              | 基本的な使い方       |
+| [./demo/04/index.html](./demo/04/index.html)               | `rule-overlap` のデモ                       | 基本的な使い方       |
+| [./demo/link-list/index.html](./demo/link-list/index.html) | リンク集 作例                               | 作例                 |
+| [./demo/schedule/index.html](./demo/schedule/index.html)   | スケジュール表 作例                         | 作例                 |
+
+## ライセンス
+
+このリポジトリのコードは MIT License です。
