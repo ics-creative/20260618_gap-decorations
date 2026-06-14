@@ -42,15 +42,12 @@ main {
 
   /* ホバー・フォーカス時に追従する背景要素 */
   &:after {
+    background-color: rgb(0 0 0 / 0.05);
+    border-radius: 4px;
     content: "";
     position: absolute;
-    inset: anchor(--anchor start);
-    inline-size: anchor-size(--anchor inline);
-    block-size: anchor-size(--anchor block);
-    border-radius: 4px;
-    background-color: rgb(0 0 0 / 0.05);
-    transition-property: inset, inline-size, block-size;
-    transition-duration: 0.3s;
+    inset: anchor(--anchor inside);
+    transition: inset 0.3s;
     z-index: -1;
   }
 
@@ -71,7 +68,9 @@ main {
     column-rule-style: repeat(2, dashed), double;
     column-rule-color: rgb(0 0 0 / 0.3);
     column-rule-inset: calc((var(--padding) - 8px) * -1);
-    transition: column-rule-inset 0.3s;
+    transition:
+      column-rule-inset 0.3s,
+      column-rule-color 5s;
 
     .category {
       border: 1px solid rgb(0, 0, 0, 0.3);
@@ -86,7 +85,7 @@ main {
     }
 
     /* ホバー・フォーカス時のスタイル */
-    &:where(:hover, :focus-visible) {
+    &:is(:hover, :focus-visible) {
       anchor-name: --anchor;
       column-rule-color: rgb(0 0 0 / 0.8);
       column-rule-inset: 0;
