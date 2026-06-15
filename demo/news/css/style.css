@@ -68,9 +68,8 @@ main {
     column-rule-style: repeat(2, dashed), double;
     column-rule-color: rgb(0 0 0 / 0.3);
     column-rule-inset: calc((var(--padding) - 8px) * -1);
-    transition:
-      column-rule-inset 0.3s,
-      column-rule-color 5s;
+    transition-property: column-rule-inset, column-rule-color;
+    transition-duration: 0.3s;
 
     .category {
       border: 1px solid rgb(0, 0, 0, 0.3);
