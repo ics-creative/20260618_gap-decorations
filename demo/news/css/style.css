@@ -37,7 +37,7 @@ main {
   grid-template-columns: max-content max-content 1fr 40px;
   column-gap: 24px;
   /* 行の罫線 */
-  row-rule: 1px solid rgb(0, 0, 0, 0.3);
+  row-rule: 1px solid rgb(0 0 0 / 0.3);
   row-rule-inset-end: 40px;
 
   /* ホバー・フォーカス時に追従する背景要素 */
@@ -72,7 +72,7 @@ main {
     transition-duration: 0.3s;
 
     .category {
-      border: 1px solid rgb(0, 0, 0, 0.3);
+      border: 1px solid rgb(0 0 0 / 0.3);
       border-radius: 8px;
       display: grid;
       place-items: center;

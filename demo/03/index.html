@@ -5,28 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>demo - 03</title>
     <style>
-      body {
+      * {
         margin: 0;
+      }
+
+      body {
         background: white;
         font-family: sans-serif;
+        font-weight: 700;
       }
 
       main {
-        max-width: 600px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+        max-width: 1300px;
+        gap: 48px;
         margin: 40px auto;
         padding-inline: 16px;
+      }
+
+      .wrap {
+        display: grid;
+        grid-template-rows: subgrid;
+        grid-row: span 3;
+        gap: 12px;
+      }
+
+      .label {
+        font-size: 32px;
       }
 
       .grid {
         display: grid;
         gap: 16px;
         grid-template-columns: repeat(5, 1fr);
-        column-rule: 3px solid green; /* 列の罫線 */
-        row-rule: 3px solid red; /* 行の罫線 */
-        rule-break: intersection; /* 交差は重ならないようにする */
-        rule-inset: 4px; /* 罫線の両端を4pxずつ短くする */
-        column-rule-visibility-items: around; /* 列の線のどちらか一方が要素と隣接していると表示 */
-        row-rule-visibility-items: between; /* 行の線の上下が要素と隣接していると表示 */
+        rule: 3px solid green;
+        rule-break: intersection;
+
+        /* 01 */
+        &.grid-01 {
+          rule-inset: 12px; /* 列行の罫線 12px短くする */
+        }
+
+        /* 02 */
+        &.grid-02 {
+          column-rule-inset-cap: 24px; /* 列の罫線 終端のみ24px短くする */
+          row-rule-inset-junction: 12px; /* 行の罫線 交点のみ12px短くする */
+        }
 
         .grid-item {
           background: #ddd;
@@ -37,22 +62,68 @@
   </head>
   <body>
     <main>
-      <div class="grid">
-        <div class="grid-item" style="grid-column: 2; grid-row: 5"></div>
-        <div class="grid-item" style="grid-column: 4; grid-row: 1"></div>
-        <div class="grid-item" style="grid-column: 1; grid-row: 3"></div>
-        <div class="grid-item" style="grid-column: 5; grid-row: 4"></div>
-        <div class="grid-item" style="grid-column: 3; grid-row: 2"></div>
-        <div class="grid-item" style="grid-column: 2; grid-row: 1"></div>
-        <div class="grid-item" style="grid-column: 4; grid-row: 5"></div>
-        <div class="grid-item" style="grid-column: 5; grid-row: 2"></div>
-        <div class="grid-item" style="grid-column: 1; grid-row: 4"></div>
-        <div class="grid-item" style="grid-column: 3; grid-row: 5"></div>
-        <div class="grid-item" style="grid-column: 4; grid-row: 3"></div>
-        <div class="grid-item" style="grid-column: 1; grid-row: 1"></div>
-        <div class="grid-item" style="grid-column: 3; grid-row: 4"></div>
-        <div class="grid-item" style="grid-column: 2; grid-row: 2"></div>
-        <div class="grid-item" style="grid-column: 5; grid-row: 5"></div>
+      <div class="wrap">
+        <p class="label">01</p>
+        <p>rule-inset: 8px;</p>
+        <div class="grid grid-01">
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <p class="label">02</p>
+        <p>column-rule-inset-cap: 24px;<br />row-rule-inset-junction: 12px;</p>
+        <div class="grid grid-02">
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+        </div>
       </div>
     </main>
   </body>

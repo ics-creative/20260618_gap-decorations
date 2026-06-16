@@ -5,25 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>demo - 01</title>
     <style>
-      body {
+      * {
         margin: 0;
+      }
+
+      body {
         background: white;
         font-family: sans-serif;
+        font-weight: 700;
       }
 
       main {
-        max-width: 600px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+        max-width: 1300px;
+        gap: 48px;
         margin: 40px auto;
         padding-inline: 16px;
+      }
+
+      .wrap {
+        display: grid;
+        gap: 12px;
+      }
+
+      .label {
+        font-size: 32px;
       }
 
       .grid {
         display: grid;
         gap: 16px;
         grid-template-columns: repeat(5, 1fr);
-        rule: 3px solid green; /* 列行の罫線を一括指定 */
-        rule-break: intersection; /* 交差は重ならないようにする */
-        rule-inset: 4px; /* 罫線の両端を4pxずつ短くする */
+
+        /* 01 */
+        &.grid-01 {
+          rule: 3px solid green; /* 列行の罫線 一括指定 */
+        }
+
+        /* 02 */
+        &.grid-02 {
+          column-rule:
+            3px solid green,
+            3px dashed green,
+            6px double green; /* 列の罫線 指定 */
+          row-rule-width: 3px; /* 行の罫線 幅指定 */
+          row-rule-style: repeat(2, dashed), solid; /* 行の罫線 スタイル指定 */
+          row-rule-color: orange; /* 行の罫線 色指定 */
+        }
 
         .grid-item {
           background: #ddd;
@@ -34,32 +63,66 @@
   </head>
   <body>
     <main>
-      <div class="grid">
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
+      <div class="wrap">
+        <p class="label">01</p>
+        <div class="grid grid-01">
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <p class="label">02</p>
+        <div class="grid grid-02">
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+        </div>
       </div>
     </main>
   </body>

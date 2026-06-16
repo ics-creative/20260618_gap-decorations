@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>demo - 02</title>
+    <title>demo - 05</title>
     <style>
       * {
         margin: 0;
@@ -26,8 +26,6 @@
 
       .wrap {
         display: grid;
-        grid-template-rows: subgrid;
-        grid-row: span 3;
         gap: 12px;
       }
 
@@ -39,17 +37,17 @@
         display: grid;
         gap: 16px;
         grid-template-columns: repeat(5, 1fr);
-        rule: 3px solid green;
+        column-rule: 3px solid green;
+        row-rule: 3px solid orange;
 
         /* 01 */
         &.grid-01 {
-          rule-break: intersection; /* 列行の罫線 交点で分割 */
+          rule-overlap: row-over-column; /* 初期値 */
         }
 
         /* 02 */
         &.grid-02 {
-          column-rule-break: intersection; /* 列の罫線 交点で分割 */
-          row-rule-break: normal; /* 行の罫線 T字交点のみで分割 */
+          rule-overlap: column-over-row; /* 列を行の上に重ねて表示 */
         }
 
         .grid-item {
@@ -63,7 +61,7 @@
     <main>
       <div class="wrap">
         <p class="label">01</p>
-        <p class="description">rule-break: intersection;</p>
+        <p>rule-overlap: row-over-column;</p>
         <div class="grid grid-01">
           <div class="grid-item"></div>
           <div class="grid-item"></div>
@@ -95,12 +93,17 @@
 
       <div class="wrap">
         <p class="label">02</p>
-        <p class="description">
-          column-rule-break: intersection;<br />
-          row-rule-break: normal;
-        </p>
+        <p>rule-overlap: column-over-row;</p>
         <div class="grid grid-02">
-          <div class="grid-item" style="grid-column: 1/4; grid-row: 1/4"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
           <div class="grid-item"></div>
           <div class="grid-item"></div>
           <div class="grid-item"></div>

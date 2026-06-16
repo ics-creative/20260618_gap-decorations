@@ -1,8 +1,8 @@
 :root {
-  --col_primary: #007595;
-  --col_primary-pale: #609cb2;
-  --col_primary-palest: #d9e9ef;
-  --col_white: #fff;
+  --color_primary: #007595;
+  --color_primary-pale: #609cb2;
+  --color_primary-palest: #d9e9ef;
+  --color_white: #fff;
   --font_base: 16px;
   --font_small: 12px;
   --rounded: 8px;
@@ -35,7 +35,7 @@ main {
 
 /* 曜日 */
 .calendar-header {
-  background: var(--col_primary);
+  background: var(--color_primary);
   border-radius: var(--rounded) var(--rounded) 0 0;
   display: grid;
   grid-template-columns: subgrid;
@@ -45,7 +45,7 @@ main {
   top: 0;
 
   .day {
-    color: var(--col_white);
+    color: var(--color_white);
     font-size: var(--font_base);
     font-weight: 700;
     display: grid;
@@ -63,7 +63,7 @@ main {
 
   .time {
     display: grid;
-    color: var(--col_primary);
+    color: var(--color_primary);
     font-size: var(--font_small);
     font-weight: 700;
     grid-column: 1 / 2;
@@ -83,19 +83,19 @@ main {
   grid-row: 3 / -1;
 
   /*  Gap Decorations  */
-  column-rule: 1px solid var(--col_primary);
+  column-rule: 1px solid var(--color_primary);
   row-rule-width: 1px;
   row-rule-style: dashed, solid;
-  row-rule-color: var(--col_primary-pale);
+  row-rule-color: var(--color_primary-pale);
   row-rule-break: intersection;
   row-rule-inset: var(--inset_offset);
 
   .schedule {
-    background: var(--col_primary-palest);
-    border: 1px solid var(--col_primary-pale);
-    border-left: 3px solid var(--col_primary);
+    background: var(--color_primary-palest);
+    border: 1px solid var(--color_primary-pale);
+    border-left: 3px solid var(--color_primary);
     border-radius: var(--rounded);
-    color: var(--col_primary);
+    color: var(--color_primary);
     font-size: var(--font_small);
     font-weight: 700;
     margin-inline: var(--inset_offset) calc(var(--inset_offset) * 1.25);
@@ -152,10 +152,10 @@ main {
     /*  Gap Decorations  */
     column-rule-width: 1px;
     column-rule-style: dashed, solid;
-    column-rule-color: var(--col_primary-pale);
+    column-rule-color: var(--color_primary-pale);
     column-rule-break: intersection;
     column-rule-inset-junction: var(--inset_offset);
-    row-rule: 1px solid var(--col_primary-pale);
+    row-rule: 1px solid var(--color_primary-pale);
     row-rule-break: normal;
 
     .schedule {

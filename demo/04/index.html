@@ -3,27 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>demo - 02</title>
+    <title>demo - 04</title>
     <style>
-      body {
+      * {
         margin: 0;
+      }
+
+      body {
         background: white;
         font-family: sans-serif;
+        font-weight: 700;
       }
 
       main {
+        display: grid;
         max-width: 600px;
         margin: 40px auto;
         padding-inline: 16px;
+      }
+
+      .wrap {
+        display: grid;
+        gap: 12px;
+      }
+
+      .label {
+        font-size: 32px;
       }
 
       .grid {
         display: grid;
         gap: 16px;
         grid-template-columns: repeat(5, 1fr);
-        column-rule: 3px solid orange;
-        row-rule: 3px solid green;
-        rule-overlap: column-over-row; /* 列の罫線を上に表示 */
+        rule: 3px solid green;
+        rule-break: intersection;
+        column-rule-visibility-items: around; /* 列の罫線 左右どちらかに要素が存在すれば罫線表示 */
+        row-rule-visibility-items: between; /* 行の罫線 上下どちらにも要素が存在すれば罫線表示 */
 
         .grid-item {
           background: #ddd;
@@ -34,32 +49,28 @@
   </head>
   <body>
     <main>
-      <div class="grid">
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
+      <div class="wrap">
+        <p>
+          column-rule-visibility-items: around;<br />row-rule-visibility-items:
+          between;
+        </p>
+        <div class="grid">
+          <div class="grid-item" style="grid-column: 2; grid-row: 5"></div>
+          <div class="grid-item" style="grid-column: 4; grid-row: 1"></div>
+          <div class="grid-item" style="grid-column: 1; grid-row: 3"></div>
+          <div class="grid-item" style="grid-column: 5; grid-row: 4"></div>
+          <div class="grid-item" style="grid-column: 3; grid-row: 2"></div>
+          <div class="grid-item" style="grid-column: 2; grid-row: 1"></div>
+          <div class="grid-item" style="grid-column: 4; grid-row: 5"></div>
+          <div class="grid-item" style="grid-column: 5; grid-row: 2"></div>
+          <div class="grid-item" style="grid-column: 1; grid-row: 4"></div>
+          <div class="grid-item" style="grid-column: 3; grid-row: 5"></div>
+          <div class="grid-item" style="grid-column: 4; grid-row: 3"></div>
+          <div class="grid-item" style="grid-column: 1; grid-row: 1"></div>
+          <div class="grid-item" style="grid-column: 3; grid-row: 4"></div>
+          <div class="grid-item" style="grid-column: 2; grid-row: 2"></div>
+          <div class="grid-item" style="grid-column: 5; grid-row: 5"></div>
+        </div>
       </div>
     </main>
   </body>
