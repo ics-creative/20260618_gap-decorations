@@ -1,4 +1,4 @@
-# 20260618_gap-decorations
+# 260618_gap-decorations
 
 ICS MEDIAの記事「GridやFlexboxの余白に線を引く - CSS Gap Decoration」で紹介しているデモのソースコードです。 ビルド不要の素のHTML / CSSで書かれています。
 
