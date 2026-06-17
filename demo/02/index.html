@@ -39,18 +39,18 @@
         display: grid;
         gap: 16px;
         grid-template-columns: repeat(5, 1fr);
-        column-rule: 3px solid green;
         row-rule: 3px solid orange;
+        column-rule: 3px solid green;
 
         /* 01 */
         &.grid-01 {
-          rule-break: intersection; /* 列行の罫線 交点で分割 */
+          rule-break: intersection; /* 行・列の罫線 交点で分割 */
         }
 
         /* 02 */
         &.grid-02 {
-          column-rule-break: intersection; /* 列の罫線 交点で分割 */
           row-rule-break: normal; /* 行の罫線 T字交点のみで分割 */
+          column-rule-break: intersection; /* 列の罫線 交点で分割 */
         }
 
         .grid-item {

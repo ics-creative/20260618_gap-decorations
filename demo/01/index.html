@@ -40,18 +40,18 @@
 
         /* 01 */
         &.grid-01 {
-          rule: 3px solid green; /* 列行の罫線 一括指定 */
+          rule: 3px solid green; /* 行・列の罫線 一括指定 */
         }
 
         /* 02 */
         &.grid-02 {
+          row-rule-width: 3px; /* 行の罫線 幅指定 */
+          row-rule-style: repeat(2, dashed), solid; /* 行の罫線 スタイル指定 */
+          row-rule-color: orange; /* 行の罫線 色指定 */
           column-rule:
             3px solid green,
             3px dashed green,
             6px double green; /* 列の罫線 指定 */
-          row-rule-width: 3px; /* 行の罫線 幅指定 */
-          row-rule-style: repeat(2, dashed), solid; /* 行の罫線 スタイル指定 */
-          row-rule-color: orange; /* 行の罫線 色指定 */
         }
 
         .grid-item {

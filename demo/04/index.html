@@ -35,11 +35,11 @@
         display: grid;
         gap: 16px;
         grid-template-columns: repeat(5, 1fr);
-        column-rule: 3px solid green;
         row-rule: 3px solid orange;
+        column-rule: 3px solid green;
         rule-break: intersection;
-        column-rule-visibility-items: around; /* 列の罫線 左右どちらかに要素が存在すれば罫線表示 */
         row-rule-visibility-items: between; /* 行の罫線 上下どちらにも要素が存在すれば罫線表示 */
+        column-rule-visibility-items: around; /* 列の罫線 左右どちらかに要素が存在すれば罫線表示 */
 
         .grid-item {
           background: #ddd;

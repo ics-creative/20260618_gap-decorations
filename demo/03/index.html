@@ -39,19 +39,19 @@
         display: grid;
         gap: 16px;
         grid-template-columns: repeat(5, 1fr);
-        column-rule: 3px solid green;
         row-rule: 3px solid orange;
+        column-rule: 3px solid green;
         rule-break: intersection;
 
         /* 01 */
         &.grid-01 {
-          rule-inset: 12px; /* 列行の罫線 12px短くする */
+          rule-inset: 12px; /* 行・列の罫線 12px短くする */
         }
 
         /* 02 */
         &.grid-02 {
-          column-rule-inset-cap: 24px; /* 列の罫線 終端のみ24px短くする */
           row-rule-inset-junction: 12px; /* 行の罫線 交点のみ12px短くする */
+          column-rule-inset-cap: 24px; /* 列の罫線 終端のみ24px短くする */
         }
 
         .grid-item {
