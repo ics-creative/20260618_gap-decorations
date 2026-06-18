@@ -47,7 +47,7 @@ main {
   .day {
     color: var(--color_white);
     font-size: var(--font_base);
-    font-weight: 700;
+    font-weight: bold;
     display: grid;
     place-items: center;
   }
@@ -65,7 +65,7 @@ main {
     display: grid;
     color: var(--color_primary);
     font-size: var(--font_small);
-    font-weight: 700;
+    font-weight: bold;
     grid-column: 1 / 2;
     grid-row: span 2;
     padding-right: 4px;
@@ -97,7 +97,7 @@ main {
     border-radius: var(--rounded);
     color: var(--color_primary);
     font-size: var(--font_small);
-    font-weight: 700;
+    font-weight: bold;
     margin-inline: var(--inset_offset) calc(var(--inset_offset) * 1.25);
     padding: 4px;
     overflow: hidden;
@@ -113,7 +113,7 @@ main {
 }
 
 /* 横向きカレンダー */
-@container (max-width: 840px) {
+@container (width <= 840px) {
   .calendar {
     display: grid;
     border-radius: 8px 0 0 8px;
