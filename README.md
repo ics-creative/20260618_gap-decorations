@@ -1,6 +1,6 @@
 # 260618_gap-decorations
 
-ICS MEDIAの記事「CSS GridやFlexboxのgapに線を引く - CSS Gap Decoration」で紹介しているデモのソースコードです。 ビルド不要の素のHTML / CSSで書かれています。
+ICS MEDIAの記事「CSS GridやFlexboxのgapに線を引く - CSS Gap Decorations」で紹介しているデモのソースコードです。 ビルド不要の素のHTML / CSSで書かれています。
 
 本記事のデモは、**Chrome・Edge 149以上** でご覧ください。
 
